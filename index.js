@@ -5,12 +5,6 @@
 
     const APP_ID = undefined; // TODO replace with your app ID (OPTIONAL).
 
-    var express = require('express');
-    var fs = require('fs');
-    var request = require('request');
-    var cheerio = require('cheerio');
-    var app = express();
-
     const languageStrings = {
         'en-US': {
             translation: {
@@ -60,44 +54,44 @@
         'GetSchedule': function() {
             var activityThing = String(this.event.request.intent.slots.event.value);
             var outStr = '';
-            switch(activityThing) {
+            switch (activityThing) {
                 case 'doors open':
-                    outStr='10:00 am';
+                    outStr = '10:00 am';
                     break;
                 case 'registration begins':
-                    outStr='10:00 am';
+                    outStr = '10:00 am';
                     break;
                 case 'opening ceremony':
-                    outStr='11:00 am';
+                    outStr = '11:00 am';
                     break;
                 case 'hacking starts':
-                    outStr='12:00 pm';
+                    outStr = '12:00 pm';
                     break;
                 case 'team building session':
-                    outStr='12:00 pm';
+                    outStr = '12:00 pm';
                     break;
                 case 'lunch':
-                    outStr='1:00 pm';
+                    outStr = '1:00 pm';
                     break;
                 case 'dinner':
-                    outStr='7:00 pm';
+                    outStr = '7:00 pm';
                     break;
                 case 'breakfast':
-                    outStr='8:00 am';
+                    outStr = '8:00 am';
                     break;
                 case 'hacking stops':
-                    outStr='12:00 pm';
+                    outStr = '12:00 pm';
                     break;
                 case 'demoes start':
-                    outStr='1:00 pm';
+                    outStr = '1:00 pm';
                     break;
                 case 'doors closing':
-                    outStr='4:00 pm';
+                    outStr = '4:00 pm';
                     break;
                 default:
-                    outStr='Sorry, I couldn\'t find that event.';
+                    outStr = 'Sorry, I couldn\'t find that event.';
                     break;
-}
+            }
             const speechOutput = outStr;
             // const speechOutput = activityThing;
             const reprompt = this.t('HELP_REPROMPT');

@@ -30,7 +30,7 @@ request(url, function(error, response, html){
         // if the index is even, put the string into the timeSlot, else put it into the activities
         for (count = 0; count < timesAndActivities.length; count++)
         {
-            if (count % 2 == 0)
+            if (count % 2 === 0)
                 timeSlots.push(timesAndActivities[count]);
             else
                 activities.push(timesAndActivities[count]);
